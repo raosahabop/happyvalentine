@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Shivangi ♥</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Tenor+Sans&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rose-gold: #b76e79;
+            --deep-rose: #8b4049;
+            --blush: #f4e8e9;
+            --cream: #faf7f5;
+            --charcoal: #2a2a2a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: linear-gradient(135deg, var(--blush) 0%, var(--cream) 50%, #fff 100%);
+            color: var(--charcoal);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Floating hearts background */
+        .hearts-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 25px;
+            color: var(--rose-gold);
+            opacity: 0;
+            animation: floatHeart 12s infinite ease-in-out;
+        }
+
+        .heart:nth-child(1) { left: 5%; animation-delay: 0s; }
+        .heart:nth-child(2) { left: 15%; animation-delay: 2s; }
+        .heart:nth-child(3) { left: 25%; animation-delay: 4s; }
+        .heart:nth-child(4) { left: 35%; animation-delay: 1s; }
+        .heart:nth-child(5) { left: 45%; animation-delay: 3s; }
+        .heart:nth-child(6) { left: 55%; animation-delay: 5s; }
+        .heart:nth-child(7) { left: 65%; animation-delay: 2.5s; }
+        .heart:nth-child(8) { left: 75%; animation-delay: 4.5s; }
+        .heart:nth-child(9) { left: 85%; animation-delay: 1.5s; }
+        .heart:nth-child(10) { left: 95%; animation-delay: 3.5s; }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.4;
+            }
+            90% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Pages */
+        .page {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .page.hidden {
+            opacity: 0;
+            transform: scale(0.95);
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        /* PROPOSAL PAGE */
+        .proposal-container {
+            text-align: center;
+            max-width: 700px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .name {
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: var(--deep-rose);
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+            animation: slideDown 1s ease-out 0.3s both;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .flower-container {
+            margin: 2rem 0 3rem;
+            animation: floatFlower 3s ease-in-out infinite;
+        }
+
+        .flower-svg {
+            width: 280px;
+            height: 280px;
+            filter: drop-shadow(0 15px 40px rgba(183, 110, 121, 0.25));
+        }
+
+        @keyframes floatFlower {
+            0%, 100% {
+                transform: translateY(0px) rotate(-2deg);
+            }
+            50% {
+                transform: translateY(-15px) rotate(2deg);
+            }
+        }
+
+        .cute-sticker {
+            display: inline-block;
+            background: white;
+            padding: 1rem;
+            border-radius: 20px;
+            box-shadow: 
+                0 20px 50px rgba(183, 110, 121, 0.2),
+                0 0 0 8px var(--blush);
+            transform: rotate(-2deg);
+            animation: stickerPop 1s ease-out 0.5s both;
+        }
+
+        @keyframes stickerPop {
+            0% {
+                opacity: 0;
+                transform: rotate(-2deg) scale(0.5);
+            }
+            70% {
+                transform: rotate(-2deg) scale(1.05);
+            }
+            100% {
+                opacity: 1;
+                transform: rotate(-2deg) scale(1);
+            }
+        }
+
+        .valentine-cat-img {
+            width: 400px;
+            height: 400px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .question {
+            font-size: 2.8rem;
+            font-weight: 500;
+            font-style: italic;
+            color: var(--deep-rose);
+            margin: 1rem 0 3rem;
+            line-height: 1.5;
+            animation: fadeInUp 1s ease-out 0.8s both;
+            text-shadow: 0 2px 10px rgba(183, 110, 121, 0.1);
+        }
+
+        .question-accent {
+            display: block;
+            font-size: 1rem;
+            font-family: 'Tenor Sans', sans-serif;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--rose-gold);
+            opacity: 0.7;
+            font-style: normal;
+            font-weight: 400;
+            margin-top: 0.5rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 3rem;
+            animation: scaleIn 1s ease-out 0.9s both;
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .btn {
+            padding: 1.5rem 4rem;
+            font-family: 'Tenor Sans', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-yes {
+            background: linear-gradient(135deg, var(--rose-gold) 0%, var(--deep-rose) 100%);
+            color: white;
+        }
+
+        .btn-yes:hover {
+            transform: scale(1.08) translateY(-3px);
+            box-shadow: 0 15px 40px rgba(183, 110, 121, 0.4);
+        }
+
+        .btn-no {
+            background: transparent;
+            color: var(--rose-gold);
+            border: 2px solid var(--rose-gold);
+            position: relative;
+        }
+
+        .btn-no:hover {
+            animation: runAway 0.3s ease-out forwards;
+        }
+
+        @keyframes runAway {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(var(--move-x), var(--move-y)) scale(0.9);
+                opacity: 0.6;
+            }
+        }
+
+        /* VALENTINE PAGE */
+        .valentine-container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .frame {
+            position: relative;
+            background: linear-gradient(135deg, var(--blush) 0%, #fff 100%);
+            border-radius: 8px;
+            padding: 3rem;
+            box-shadow: 
+                0 20px 60px rgba(183, 110, 121, 0.15),
+                0 0 0 1px rgba(183, 110, 121, 0.1);
+        }
+
+        .frame::before,
+        .frame::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 2px solid var(--rose-gold);
+        }
+
+        .frame::before {
+            top: -10px;
+            left: -10px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .frame::after {
+            bottom: -10px;
+            right: -10px;
+            border-left: none;
+            border-top: none;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 4rem;
+            font-weight: 300;
+            color: var(--deep-rose);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        .header .subtitle {
+            font-family: 'Tenor Sans', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--rose-gold);
+            opacity: 0.8;
+        }
+
+        .photo-section {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .photo-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 2rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--rose-gold);
+            box-shadow: 
+                0 10px 40px rgba(183, 110, 121, 0.3),
+                inset 0 0 0 8px var(--blush);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-container:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--blush) 0%, #fff 50%, var(--blush) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: var(--rose-gold);
+            opacity: 0.4;
+        }
+
+        .message {
+            text-align: center;
+        }
+
+        .message h2 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--deep-rose);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .message p {
+            font-size: 1.25rem;
+            line-height: 2;
+            color: var(--charcoal);
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+            opacity: 0.9;
+        }
+
+        .heart-icon {
+            display: inline-block;
+            color: var(--rose-gold);
+            font-size: 2rem;
+            animation: heartbeat 1.5s ease-in-out infinite;
+            margin: 1rem 0;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            10%, 30% {
+                transform: scale(1.1);
+            }
+            20%, 40% {
+                transform: scale(1);
+            }
+        }
+
+        .footer {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .date {
+            font-family: 'Tenor Sans', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--rose-gold);
+            opacity: 0.7;
+        }
+
+        .sparkle {
+            position: absolute;
+            font-size: 1.5rem;
+            opacity: 0;
+            animation: sparkle 3s infinite;
+        }
+
+        .sparkle:nth-child(1) {
+            top: 10%;
+            left: 15%;
+            animation-delay: 0s;
+        }
+
+        .sparkle:nth-child(2) {
+            top: 20%;
+            right: 20%;
+            animation-delay: 1s;
+        }
+
+        .sparkle:nth-child(3) {
+            bottom: 15%;
+            left: 25%;
+            animation-delay: 2s;
+        }
+
+        .sparkle:nth-child(4) {
+            bottom: 25%;
+            right: 15%;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2) rotate(180deg);
+            }
+        }
+
+        .instructions {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(183, 110, 121, 0.05);
+            border-radius: 4px;
+            border-left: 3px solid var(--rose-gold);
+        }
+
+        .instructions h3 {
+            font-family: 'Tenor Sans', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--deep-rose);
+            margin-bottom: 0.75rem;
+        }
+
+        .instructions p {
+            font-size: 1rem;
+            color: var(--charcoal);
+            opacity: 0.7;
+            line-height: 1.6;
+        }
+
+        .instructions code {
+            background: rgba(183, 110, 121, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .name {
+                font-size: 2.5rem;
+            }
+
+            .valentine-cat-img {
+                width: 280px;
+                height: 280px;
+            }
+
+            .question {
+                font-size: 2rem;
+                margin: 1.5rem 0 2rem;
+            }
+
+            .buttons {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .btn {
+                padding: 1.2rem 3rem;
+                font-size: 1rem;
+            }
+
+            .frame {
+                padding: 2rem 1.5rem;
+            }
+
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header .subtitle {
+                font-size: 0.8rem;
+            }
+
+            .photo-container {
+                width: 240px;
+                height: 240px;
+            }
+
+            .message h2 {
+                font-size: 1.8rem;
+            }
+
+            .message p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating hearts background -->
+    <div class="hearts-bg">
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+    </div>
+
+    <!-- Sparkles -->
+    <div class="sparkle">✨</div>
+    <div class="sparkle">✨</div>
+    <div class="sparkle">✨</div>
+    <div class="sparkle">✨</div>
+
+    <!-- PROPOSAL PAGE -->
+    <div class="page" id="proposalPage">
+        <div class="proposal-container">
+            <div class="name">Shivangi</div>
+            
+            <div class="flower-container">
+                <div class="cute-sticker">
+                    <img src="valentine-cat.png" class="valentine-cat-img" alt="Will you be my Valentine?"/>
+                </div>
+            </div>
+
+            <div class="question" id="questionText">
+                Will you be my Valentine?
+                <span class="question-accent">This Valentine's Day & Forever</span>
+            </div>
+
+            <div class="buttons">
+                <button class="btn btn-yes" id="yesBtn">Yes! ♥</button>
+                <button class="btn btn-no" id="noBtn">No</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- VALENTINE PAGE -->
+    <div class="page hidden" id="valentinePage">
+        <div class="valentine-container">
+            <div class="frame">
+                <div class="header">
+                    <h1>Shivangi</h1>
+                    <div class="subtitle">My Valentine</div>
+                </div>
+
+                <div class="photo-section">
+                    <div class="photo-container">
+                        <!-- Replace the div below with <img src="your-photo.jpg" alt="Shivangi"> -->
+                        <img src="./sh.jpeg" alt="Shivangi">
+                    </div>
+                </div>
+
+                <div class="message">
+                    <h2>You make every day feel like Valentine's</h2>
+                    <p>
+                        In a world full of ordinary moments, you are my extraordinary. 
+                        Your smile lights up my darkest days, and your presence makes 
+                        everything beautiful. Thank you for being you, for being mine, 
+                        and for making this journey of life so incredibly special.
+                    </p>
+                    <div class="heart-icon">♥</div>
+                    <p>
+                        Here's to all the memories we've made and all the adventures 
+                        yet to come. Happy Valentine's Day, my love.
+                    </p>
+                </div>
+
+                <div class="footer">
+                    <div class="date">Valentine's Day 2026</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const proposalPage = document.getElementById('proposalPage');
+        const valentinePage = document.getElementById('valentinePage');
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const questionText = document.getElementById('questionText');
+
+        // Yes button - transition to valentine page
+        yesBtn.addEventListener('click', function() {
+            proposalPage.classList.add('hidden');
+            valentinePage.classList.remove('hidden');
+        });
+
+        // No button - runs away on hover
+        noBtn.addEventListener('mouseover', function() {
+            const moveX = (Math.random() - 0.5) * 300;
+            const moveY = (Math.random() - 0.5) * 300;
+            
+            noBtn.style.setProperty('--move-x', moveX + 'px');
+            noBtn.style.setProperty('--move-y', moveY + 'px');
+        });
+
+        noBtn.addEventListener('animationend', function() {
+            setTimeout(() => {
+                noBtn.style.animation = 'none';
+                setTimeout(() => {
+                    noBtn.style.animation = '';
+                }, 10);
+            }, 500);
+        });
+
+        // No button click - playful response
+        noBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            noBtn.style.transform = 'scale(0)';
+            noBtn.style.opacity = '0';
+            
+            setTimeout(() => {
+                questionText.innerHTML = 'Come on...<br>You know the answer! ♥';
+                noBtn.style.display = 'none';
+            }, 300);
+        });
+    </script>
+</body>
+</html>
